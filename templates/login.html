@@ -1,0 +1,32 @@
+{% load static %}
+
+<html>
+
+	<head>
+		 <link rel="stylesheet"  href="{% static 'login2.css' %}">
+	</head>
+    <body class="logo">
+    
+      <h2>Login Page</h2> 
+      <div class="ema">
+      	<div class="new">
+       <img src="{% static 'm.png' %}" alt="" width="72" height="72" />
+       <h1 class="hostel">HOSTEL.NET
+        </h1>
+        </div>
+        <form method="POST">
+            {%csrf_token%}
+            {{ form.as_p}}
+            </div>
+            <div class="butt">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" >Log In</button>
+            <p class="cpyrgt">&copy; 2018-2019</p>
+        </div>	
+
+        </form>
+    </div>
+     
+
+
+    </body>
+</html>

@@ -1,0 +1,130 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<title>Hostel_List</title>
+	 <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+	<h1>{{view.Hostel_Name}}</h1>
+	<h3>Description:</h3>
+	<p>{{view.Description}}  </p>
+	<h3>Adress</h3>
+	<p>{{view.Adress}}
+
+		{% if view.Hostel_Name == "B4 Mens Hostel" %}
+	 <p><a href="https://www.google.com/maps/place/B4+Mens+Hostel/@9.3199874,76.6137942,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x3a66cb7a38764256!8m2!3d9.3199874!4d76.6159829?hl=en">Get Directions</a>
+	 </p>	
+
+	 {% elif view.Hostel_Name == "Crown Hostel" %}
+	 <p><a href="https://www.google.com/maps/place/Crown+Agencies,+Boys+Hostel/@9.3161028,76.6184686,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x18eece8c27950855!8m2!3d9.3161028!4d76.6206573?hl=en">Get Directions</a>
+	 </p>	
+
+	{% endif %}
+
+	<h3>Hotels Nearby</h3>
+	<p>{% for  e in view.nearby_hotels.all %}</p>
+
+{{e.near_by_place}}
+{% if e.near_by_place == "Nila" %}
+<a href="https://www.google.com/maps/place/Nila/@9.3177384,76.6143592,17z/data=!3m1!4b1!4m5!3m4!1s0x3b0622e98df289b9:0x935a3dcfd5795f4a!8m2!3d9.3177331!4d76.6165532">
+	<button type="button"> Navigate To Nila</button>
+</a>
+
+
+{%  elif e.near_by_place == "Vinayaka" %}
+<a href="https://www.google.com/maps/place/Vinayaka+Hotel+and+Restaurant/@9.3166934,76.6141138,17z/data=!3m1!4b1!4m5!3m4!1s0x3b0622ea3b9cec1d:0xaae492af51480ae4!8m2!3d9.3166881!4d76.6163078">
+	<button type="button">Navigate To Vinayaka</button>
+</a>
+
+{%  elif e.near_by_place == "Prince" %}
+<a href="https://www.google.com/maps/place/Prince+Restaurant/@9.3143179,76.6155568,17z/data=!3m1!4b1!4m5!3m4!1s0x3b0622c09b855c79:0x3f5fe6bb98b864fb!8m2!3d9.3143126!4d76.6177508">
+	<button type="button">Navigate To Prince</button>
+</a>
+
+{%  elif e.near_by_place == "Jhons" %}
+<a href="https://www.google.com/maps/place/Johns+Restaurant+%26+catering/@9.3115993,76.620521,17z/data=!3m1!4b1!4m5!3m4!1s0x3b0622bf43199839:0x16eb511513116921!8m2!3d9.311594!4d76.622715">
+	<button type="button">Navigate To Jhons</button>
+</a>
+
+{%  elif e.near_by_place == "Aryaas" %}
+<a href="https://www.google.com/maps/place/Aryaas+Vegetarian+Hotel+and+Restaurant+%E0%B4%86%E0%B4%B0%E0%B5%8D%E0%B4%AF%E0%B4%BE%E0%B4%B8%E0%B5%8D+%E0%B4%B5%E0%B5%86%E0%B4%9C%E0%B4%BF%E0%B4%B1%E0%B5%8D%E0%B4%B1%E0%B5%87%E0%B4%B1%E0%B4%BF%E0%B4%AF%E0%B5%BB+%E0%B4%B9%E0%B5%8B%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B5%BD+%26+%E0%B4%B1%E0%B5%86%E0%B4%B8%E0%B5%8D%E0%B4%B1%E0%B5%8D%E0%B4%B1%E0%B5%8B%E0%B4%B1%E0%B4%A8%E0%B5%8D%E0%B4%B1%E0%B5%8D/@9.3196354,76.6095302,17z/data=!3m1!4b1!4m5!3m4!1s0x3b0622eed95f6069:0x9375551b4cbdf328!8m2!3d9.3196301!4d76.6117242">
+	<button type="button">Navigate To Aryaas</button>
+</a>
+
+
+{% endif %}
+
+{% endfor %}
+
+<h3>Places Nearby:</h3>
+
+<p>{% for  e in view.nearby.all %}</p>
+
+
+
+{{e.near}}
+
+{% if e.near == "Chengannoor Railway Station" %}
+
+
+
+<a href="https://www.google.com/maps/place/Railway+Station+Chengannur/@9.3181406,76.606329,17z/data=!3m1!4b1!4m5!3m4!1s0x3b0622ee48b6d633:0x83222264c99e69d9!8m2!3d9.3181353!4d76.608523">
+	<button type="button"> Navigate To Station</button>
+</a>
+
+{% elif e.near == "Chengannur Police Station" %}
+
+
+
+<a href="https://www.google.com/maps/place/Chengannur+Traffic+Police+Station/@9.3182289,76.573407,13z/data=!4m8!1m2!2m1!1schengannur+police+station!3m4!1s0x3b0622e9edd084b1:0x520019284d66b4e6!8m2!3d9.3180574!4d76.6173493">
+	<button type="button"> Navigate To Pollice Station</button>
+</a>
+
+
+{% elif e.near == "Century Hospital Chengannur" %}
+
+
+
+<a href="https://www.google.com/maps/place/Century+Hospital/@9.304901,76.6332571,17z/data=!3m1!4b1!4m5!3m4!1s0x3b0622b1ef2903c3:0xa741dc3fd1588422!8m2!3d9.3048957!4d76.6354511">
+	<button type="button"> Navigate To Hospital</button>
+</a>
+
+
+
+{% elif e.near == "Government Hospital" %}
+
+
+
+<a href="https://www.google.com/maps/place/Government+Hospital/@9.3240032,76.5743638,17z/data=!3m1!4b1!4m5!3m4!1s0x3b062248df207e2b:0xd26e9c9f510d456e!8m2!3d9.3239979!4d76.5765578">
+	<button type="button"> Navigate To Hospital</button>
+</a>
+
+
+
+{% elif e.near == "Mammen Memorial Hospital" %}
+
+
+
+<a href="https://www.google.com/maps/place/Mammen+Memorial+Hospital/@9.3198405,76.6092127,17z/data=!3m1!4b1!4m5!3m4!1s0x3b0622ea37140855:0x96285812558692c5!8m2!3d9.3198352!4d76.6114067">
+	<button type="button"> Navigate To Hospital</button>
+</a>
+
+
+
+
+
+{% endif %}
+{% endfor %}
+</body>
+
+<footer>
+	<br/>
+	<br/>
+	<br/>
+	<img src="{% static 'm.png' %}" alt="" width="40" height="40" />
+</footer>
+</html>

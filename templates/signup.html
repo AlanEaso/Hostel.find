@@ -1,0 +1,27 @@
+{% load static %}
+
+
+<html>
+	<head>
+		
+		<link rel="stylesheet"  href="{% static 'login2.css' %}">
+	</head>
+    <body class="logo1">
+    	<div class="new2"><h2>Sign Up</h2></div> 
+    	<div class="new1">
+       <img src="{% static 'm.png' %}" alt="" width="72" height="72" />
+       <h1 class="hostel">HOSTEL.NET
+        </h1>
+        </div>
+        <div class="logo2">
+        <form method="POST">
+            {%csrf_token%}
+            {{ form.as_p}}
+         </div>   
+            <div class="butt1">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign Up</button>
+            <p class="cpyrgt">&copy; 2018-2019</p>
+            </div>
+
+    </body>
+</html>

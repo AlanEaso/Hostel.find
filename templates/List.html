@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ul>    <h1>Available Hostels: </h1><br/>
+            {%for li in list%}
+            <li> <h2>{{li.Hostel_Name}}</h2> </li>
+            <a href="/view/{{li.id}}/"> View Details</a> 
+            	
+            {%endfor%}
+    </ul>
+</body>
+
+<footer>
+	<br/>
+	<br/>
+	<ul>
+
+	<img src="{% static 'm.png' %}" alt="" width="40" height="40" />
+</ul>
+</footer>
+
+</html>
